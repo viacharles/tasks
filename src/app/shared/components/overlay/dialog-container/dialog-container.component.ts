@@ -1,0 +1,37 @@
+import { Component, EventEmitter, Injector, Input, Output } from '@angular/core';
+import { scaleInShortenOut } from '@shared/helpers/animations.helper';
+import { IDialog, IDialogParams } from '@shared/ultilities/interfaces/overlay.interface';
+
+
+@Component({
+  selector: 'app-dialog-container',
+  templateUrl: './dialog-container.component.html',
+  styleUrls: ['./dialog-container.component.scss'],
+  animations: [scaleInShortenOut()],
+})
+export class DialogContainerComponent<T = any> implements IDialog<T> {
+  @Input() noDefaultStyle?: boolean;
+  @Input() hasCancelButton = true;
+  @Input() padding = '';
+  @Input() width = '';
+  @Input() maxWidth = '';
+  @Input() minWidth = '';
+  @Output() closed = new EventEmitter<boolean>();
+
+  public component: any;
+  public id: any;
+  public options!: IDialogParams;
+  public params!: IDialogParams;
+  public injector!: Injector;
+  public data!: T;
+
+  public isClose = false;
+
+  public onClose(): void {
+    this.isClose = true;
+    let closeTimer = setTimeout(() => {
+      this.closed.emit(true);
+      clearTimeout(closeTimer);
+    }, 300);
+  }
+}
