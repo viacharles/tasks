@@ -1,0 +1,46 @@
+$white: rgb(255, 255, 255);
+$black: black;
+$error: rgb(255, 82, 82);
+
+// primary
+$primary-50: #E8F5E9;
+$primary-100: #C8E6C9;
+$primary-200: #A5D6A7;
+$primary-300: #81C784;
+$primary-400: #66BB6A;
+$primary-500: #4CAF50;
+$primary-700: #0e5f11;
+
+// gray
+$gray-white: #FFFFFF;
+$gray-50: #FAFAFA;
+$gray-100: #F5F5F5;
+$gray-200: #EEEEEE;
+$gray-300: #E0E0E0;
+$gray-400: #BDBDBD;
+$gray-500: #9E9E9E;
+$gray-600: #757575;
+$gray-700: #616161;
+$gray-800: #282828;
+
+$theme-colors: (
+  white: $white,
+  black: $black,
+  error: $error,
+  primary: (50: $primary-50,
+    100: $primary-100,
+    200: $primary-200,
+    300: $primary-300,
+    400: $primary-400,
+    500: $primary-500),
+  gray: (white: $gray-white,
+    50: $gray-50,
+    100: $gray-100,
+    200: $gray-200,
+    300: $gray-300,
+    400: $gray-400,
+    500: $gray-500,
+    600: $gray-600,
+    700: $gray-700,
+  ),
+);

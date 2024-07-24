@@ -1,0 +1,56 @@
+.btn {
+  &-flat {
+    height: 3rem;
+    // min-width: 160px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    white-space: nowrap;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    em {
+      color: $white;
+    }
+  }
+
+  &-cancel {
+    color: $light-gray-1;
+    background-color: $white;
+    border: 1px solid $light-gray-1;
+
+    &:hover {
+      // background-color: $light-gray-3;
+      border: 1px solid $light-gray-2;
+    }
+  }
+
+  &-main {
+    color: $white;
+    background-color: $green;
+  }
+}
+
+input {
+  &+label.input {
+    display: flex;
+    color: $gray-800;
+    height: 3rem;
+    border-radius: map-get($radius, 'm');
+    border: 1px solid $gray-400;
+    background-color: $white;
+  }
+}
+
+// to prevent the autofill style from appearing
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
