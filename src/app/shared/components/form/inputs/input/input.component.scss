@@ -1,0 +1,7 @@
+@import "variables";
+
+.s {
+  height: 1.8rem;
+  padding-left: 0.5rem;
+  border-radius: map-get($radius, 's');
+}

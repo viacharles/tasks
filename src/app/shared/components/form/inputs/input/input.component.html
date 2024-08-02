@@ -1,0 +1,8 @@
+<label class="input h-100p b-r-s {{this.size}}" [for]="this.id">
+  <input class="w-100p" [ngModel]="this.model" [type]="this.type" pattern="[0-9]+(\.[0-9]{1,2})?" [id]="this.id"
+    [disabled]="this.disabled" [placeholder]="this.placeholder" [class.error]="this.isError"
+    (keyup)="this.input($event)">
+</label>
+
+<!-- 錯誤訊息 -->
+<div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>

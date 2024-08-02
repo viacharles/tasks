@@ -1,0 +1,6 @@
+<textarea #tTextArea class="textarea w-100p overflow-auto pl-2" [placeholder]="this.placeholder" [value]="this.model"
+  [(ngModel)]="this.model" [style.minHeight]="this.minHeight ? this.minHeight : '6rem'"
+  [style.maxHeight]="this.maxHeight ? this.maxHeight : 'unset'" (ngModelChange)="this.resize(tTextArea)"
+  [disabled]="this.disabled" [class.error]="this.isError"></textarea>
+<!-- 錯誤訊息 -->
+<div class="error-message" *ngIf="this.errorMessage && this.isError">{{this.errorMessage}}</div>

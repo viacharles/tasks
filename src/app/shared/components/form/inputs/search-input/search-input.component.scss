@@ -1,0 +1,68 @@
+@import 'colors';
+@import 'variables';
+
+:host {
+  display: flex;
+  min-width: 150px;
+}
+
+input {
+  border: none;
+}
+
+div.input {
+
+  & .placeholder {
+    pointer-events: none;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+  }
+
+  &>em {
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      color: $gray-600
+    }
+  }
+
+  &>div:not(:first-of-type) {
+    border-left: 1px solid $gray-400;
+  }
+
+  &>div:first-of-type,
+  &>div:nth-of-type(3) {
+    cursor: pointer;
+  }
+
+  &:has(input:focus),
+  &:has(span.showPlaceholder) {
+    .placeholder {
+      top: -25%;
+      left: 0.5rem;
+      transform: scale(0.9);
+      color: $gray-800;
+    }
+  }
+
+  .dropdown {
+    z-index: map-get($layout-level, 'overlay');
+    bottom: -5px;
+    left: 0;
+    transform: translateY(100%);
+    border-radius: 0 0 map-get($radius, 'm') map-get($radius, 'm');
+    box-shadow: map-get($shadow , 'dropdown');
+
+    li:hover {
+      background-color: $gray-200;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div #tSelf class="input p-relative flex-row-center px-2" (click)="this.showDropdown = !this.showDropdown;">
+  <input type="text" class="d-none">
+  <p class="text-nowrap px-2">{{this.title}} <span class="fw-5">{{this.typeTitle}}</span></p>
+  <em class="icon-triangle f-gray-700"></em>
+  <ul *ngIf="this.showDropdown" class="dropdown w-100p p-absolute bg-white b-r-m py-2 border-gray-300">
+    <li *ngFor="let option of this.options" class="p-2" (click)="this.onSelect(option)">{{option.name}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'colors';
+
+:host {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  color: $gray-800;
+  height: 3rem;
+  border-radius: map-get($radius, 'm');
+  border: 1px solid $gray-400;
+  background-color: $white;
+  padding: 0 0.5rem 0 0.75rem;
+
+  &.disabled {
+    cursor: auto;
+    background-color: $gray-100;
+
+    em {
+      color: $gray-200;
+    }
+  }
+
+  &.focus {
+    box-shadow: map-get($shadow, 'input');
+  }
+
+  &.error {
+    border: 1px solid $red-400;
+
+    &:hover {
+      background-color: $red-200;
+      border-width: 1.5px;
+    }
+
+    em {
+      color: $red-400;
+    }
+  }
+
+  em {
+    font-size: 1.2rem;
+    color: $gray-800;
+    transition: 0.3s;
+
+    &.cancel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.15rem;
+      width: 17px;
+      height: 17px;
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: $gray-800;
+      border-radius: 50%;
+
+      &:hover {
+        font-size: 0.4rem;
+        background-color: $primary-100;
+        color: $gray-800;
+      }
+    }
+  }
+}
+
+.calendar-container {
+  z-index: 70;
+  top: 36px;
+  left: 0;
+  padding: 18px 24px;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  border-radius: 10px;
+  box-sizing: content-box;
+  transition: border 0.2s;
+  border: 1.5px solid transparent;
+
+  &:hover {
+    border: 1.5px solid $primary-400;
+  }
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+h5 {
+  margin-bottom: 0;
+}

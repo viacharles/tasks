@@ -1,0 +1,25 @@
+@import "colors";
+
+:host {
+  display: flex;
+}
+
+input {
+  &+label.toggle span {
+    background-color: $yellow-500;
+  }
+
+  &:checked+label.toggle {
+    background-color: $gray-300;
+
+    span {
+      background-color: $primary-500;
+    }
+  }
+
+  &:not(:disabled):hover+label.toggle {
+    span {
+      border: 1px solid $yellow-300;
+    }
+  }
+}

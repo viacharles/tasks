@@ -1,0 +1,19 @@
+<div #tInput class="input w-100p flex-row-between" [class.disabled]="this.isDisabled" [class.error]="this.isError"
+  [class.focus]="this.show" (click)="this.showCalendar()">
+  <input type="text" class="d-none">
+  <h5 class="has-value" [style.fontSize]="this.valueFontSize" *ngIf="this.model; else tPlaceholder">
+    {{this.isDynamic ? $any(this.model[0]).value : this.model}}
+  </h5>
+  <ng-template #tPlaceholder>
+    <p class="text-gray-200 fs-xsm mb-0" [style.fontSize]="this.placeholderFontSize">
+      {{ this.placeholder }}
+    </p>
+  </ng-template>
+  <div class="d-flex">
+    @if (this.model) { <em class="cancel icon-cancel-thick" (click)="this.clear($event)"></em> }
+    @else { <em class="icon-calendar no-func"></em> }
+  </div>
+</div>
+<div #tCalendarContainer @fadeInOutSize *ngIf="this.show" class="calendar-container p-absolute bg-gray-100">
+  <app-calendar (select)="this.select($event)" [isRange]="this.isRange"></app-calendar>
+</div>

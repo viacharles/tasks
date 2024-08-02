@@ -1,0 +1,19 @@
+@import "colors";
+@import "variables";
+
+.input {
+  cursor: pointer;
+}
+
+.dropdown {
+  z-index: map-get($layout-level, 'overlay');
+  bottom: -5px;
+  left: 0;
+  transform: translateY(100%);
+  border-radius: 0 0 map-get($radius, 'm') map-get($radius, 'm');
+  box-shadow: map-get($shadow , 'dropdown');
+
+  li:hover {
+    background-color: $gray-200;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="input p-relative mb-0">
+  <div #tType class="p-relative flex-row-center px-2" (click)="this.showDropdown = !this.showDropdown;">
+    <p class="text-nowrap px-2">搜尋 <span class="fw-5">{{this.typeTitle}}</span></p>
+    <em class="icon-triangle f-gray-700"></em>
+    <ul *ngIf="this.showDropdown" class="dropdown w-100p p-absolute bg-white b-r-m py-2 border-gray-300">
+      <li *ngFor="let option of this.searchOptions" class="p-2" (click)="this.onSelectType(option)">{{option.name}}</li>
+    </ul>
+  </div>
+  <div class="p-relative w-100p flex-row-center" [id]="this.id">
+    <input #tInput class="fs-lgx pl-3 mr-7 h-11 w-100p" type="search" [id]="this.id"
+      (keyup)="this.input($event, tInput.value)" [(ngModel)]="this.model" />
+    <span class="placeholder p-absolute f-gray-700 bg-white b-r-m p-1"
+      [class.showPlaceholder]="tInput.value">{{this.placeholder}}</span>
+  </div>
+  <em *ngIf="tInput.value" class="p-absolute icon-cancel-thick fs-xs f-gray-500 h-5 w-5" (click)="this.clear()"></em>
+  <div class="w-16 flex-row-center" (click)="this.search.emit(this.model)">
+    <em class="icon-find f-gray-400"></em>
+  </div>
+</div>
