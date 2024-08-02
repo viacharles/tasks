@@ -116,7 +116,7 @@ $value in $font-weight {
   .flex-#{$d-value} {
 
     @each $p-key,
-    $p-value in $flex-position {
+    $p-value in $Justify-content {
       &-#{$p-key} {
         display: flex;
         flex-direction: $d-value;
@@ -128,17 +128,43 @@ $value in $font-weight {
 }
 
 @each $key,
-$value in $theme-color {
-  .bg-#{$key} {
-    background-color: $value;
+$value in $theme-colors {
+  @if type-of($value)=='map' {
+
+    @each $sub-key,
+    $sub-value in $value {
+      .bg-#{$key}-#{$sub-key} {
+        background-color: $sub-value;
+      }
+
+      .f-#{$key}-#{$sub-key} {
+        color: $sub-value;
+      }
+
+      .border-#{$key}-#{$sub-key} {
+        border: 1px solid $sub-value;
+      }
+    }
   }
 
-  .text-#{$key} {
-    color: $value;
-  }
+  @else {
+    .bg-#{$key} {
+      background-color: $value;
+    }
 
-  .border-#{$key} {
-    border: 1px solid $value;
+    .f-#{$key} {
+      color: $value;
+    }
+
+    .border-#{$key} {
+      border: 1px solid $value;
+    }
+  }
+}
+
+@each $value in $white-space {
+  .text-#{$value} {
+    white-space: $value;
   }
 }
 
@@ -154,15 +180,20 @@ $value in $theme-color {
   }
 }
 
-@each $key,
-$value in $write-mode {
-  .wm-#{$key} {
-    writing-mode: #{$value};
+@each $value in $overflow {
+  .overflow-#{$value} {
+    overflow: $value
   }
 }
 
-@each $value in $list-style {
-  .li-style-#{$value} {
-    list-style-type: #{$value};
+@each $value in $flex-wrap {
+  .flex-#{$value} {
+    flex-wrap: $value;
+  }
+}
+
+@each $value in $direction {
+  .text-align-#{$value} {
+    text-align: $value;
   }
 }

@@ -1,9 +1,15 @@
 @import "colors";
 
 $radius: (
-  s: 2px,
-  m: 4px,
-  l: 8px
+  s: 4px,
+  m: 7px,
+  l: 12px,
+  circle: 50%
+);
+
+$shadow: (
+  input: 0 0 5px 1px rgba(0, 0, 0, 0.11),
+  dropdown: 0 0 5px 1px rgba(0, 0, 0, 0.11),
 );
 
 $font-level: (
@@ -63,17 +69,32 @@ $z-index: (
   s: 2,
 );
 
-$flex-position: (
+$Justify-content: (
   start: flex-start,
   center: center,
   end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
 );
 
-$display: 'flex', 'none', 'block', 'inline-block';
+$display: flex, none, block, inline-block;
 
-$flex-direction: "row", "columns";
+$flex-direction: row, column;
+
+$flex-wrap: wrap nowrap wrap-reverse;
 
 $back-size: cover, contain, initial, revert, unset, revert-layer, inherit;
+
+$cursor-pointer: auto, default, pointer;
+
+$position: relative, fixed, absolute;
+
+$white-space: nowrap, pre, normal;
+
+$overflow: auto, hidden, visible, scroll;
+
+$direction: start, center, end;
 
 $scale: (
   0: 0,
@@ -90,7 +111,7 @@ $scale: (
 );
 
 $spacing: (
-  //rem
+  //rem : value == key * 0.25 rem
   0: 0,
   1: 0.25rem,
   2: 0.5rem,

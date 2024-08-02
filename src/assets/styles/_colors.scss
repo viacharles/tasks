@@ -10,7 +10,21 @@ $primary-300: #81C784;
 $primary-400: #66BB6A;
 $primary-500: #4CAF50;
 $primary-700: #0e5f11;
-
+// yellow
+$yellow-50: #f7f3ed;
+$yellow-100: #f1e9db;
+$yellow-200: #f0d8b5;
+$yellow-300: #ecb666;
+$yellow-400: #efad49;
+$yellow-500: #de9426;
+$yellow-700: #956112;
+// red
+$red-50: #fff0f0;
+$red-100: #f0e1ca;
+$red-200: #f0d8b5;
+$red-300: #ecb666;
+$red-400: #ef6149;
+$red-500: #c3361d;
 // gray
 $gray-white: #FFFFFF;
 $gray-50: #FAFAFA;
@@ -32,7 +46,21 @@ $theme-colors: (
     200: $primary-200,
     300: $primary-300,
     400: $primary-400,
-    500: $primary-500),
+    500: $primary-500,
+    700: $primary-700),
+  yellow: (50: $yellow-50,
+    100: $yellow-100,
+    200: $yellow-200,
+    300: $yellow-300,
+    400: $yellow-400,
+    500: $yellow-500,
+    700: $yellow-700),
+  red: (50: $red-50,
+    100: $red-100,
+    200: $red-200,
+    300: $red-300,
+    400: $red-400,
+  ),
   gray: (white: $gray-white,
     50: $gray-50,
     100: $gray-100,
