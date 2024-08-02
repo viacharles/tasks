@@ -7,20 +7,20 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Folder Structure:
 
 ├──src  # Compiled files (alternatively `dist`)。
-├     ├──app  
-├         ├──modules  # 功能區塊都放這裡  
-├              ├──layout # 基礎排版  
-├              ├──task   
-├         ├──shared  # 共用元素  
-├              ├──abstract  
-├              ├──components  
-├              ├──directives  
-├              ├──helpers  
-├              ├──serrvices  
-├              ├──utilities  
-├         ├──assets  
-├              ├──font # font icon 庫  
-├              ├──styles # base scss setting  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──app  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──modules  # 功能區塊都放這裡  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──layout # 基礎排版  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──task   
+├&nbsp;&nbsp;&nbsp;&nbsp;├──shared  # 共用元素  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──abstract  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──components  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──directives  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──helpers  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──serrvices  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──utilities  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──assets  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
 
 
 ## Code scaffolding
