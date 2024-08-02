@@ -3,6 +3,10 @@
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 ## Live demo site
+
+
+[Demo]([https://karma-runner.github.io](https://viacharles.github.io/tasks/task)).
+
 ## Test coverage
 使用 jasminne
 <img width="1674" alt="image" src="https://github.com/user-attachments/assets/34923458-3305-45bd-853b-4a259090bb6c">
@@ -11,9 +15,6 @@ Run `ng test --code-coverage` 運行測試。
 Run `open tasks/index.html` 開啟測試分數細節網頁
 
 ## Codebase architecture
-
-
-[Demo]([https://karma-runner.github.io](https://viacharles.github.io/tasks/task)).
 
 ### Folder Structure:
 
