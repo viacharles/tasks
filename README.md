@@ -1,12 +1,14 @@
 ## How to run the source code
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Live demo site
+
 
 ## Codebase architecture
 
-Folder Structure:
+# Folder Structure:
 
-├──src  # Compiled files (alternatively `dist`)。
+├──src  # Compiled files (alternatively `dist`)。  
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──app  
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──modules  # 功能區塊都放這裡  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──layout # 基礎排版  
@@ -21,6 +23,10 @@ Folder Structure:
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──assets  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
+
+# Sample Code for Key Files:
+
+
 
 
 ## Code scaffolding
