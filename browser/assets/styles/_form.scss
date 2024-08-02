@@ -1,0 +1,156 @@
+@import "animation";
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  transition: 0.1s;
+
+  &:hover:not(:disabled) {
+    filter: brightness(90%) contrast(130%);
+    box-shadow: 0 0 4px 0 $gray-200 !important;
+  }
+
+  &:disabled {
+    cursor: default;
+    color: $gray-700 !important;
+    background-color: $gray-400;
+    opacity: 1;
+    border: none;
+  }
+}
+
+// 使用在包覆<input>的外標籤
+.input {
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: map-get($font-level , 'lgx');
+
+    &::placeholder {
+      font-size: 1rem;
+      color: $gray-500;
+    }
+  }
+
+  &:has(input) {
+    display: flex;
+    justify-content: space-between;
+    color: $gray-800;
+    height: 3rem;
+    border-radius: map-get($radius, 'm');
+    border: 1px solid $gray-400;
+    background-color: $white;
+  }
+
+  &:focus-within {
+    box-shadow: map-get($shadow, 'input');
+  }
+
+}
+
+// input 與 label 相鄰
+input {
+
+  // toggle
+  &+label.toggle {
+    cursor: pointer;
+    position: relative;
+    width: 1.725rem;
+    height: 1rem;
+    border-radius: 0.75rem;
+    background-color: $gray-200;
+
+    & span {
+      position: absolute;
+      top: 50%;
+      left: 0.1rem;
+      transform: translate(0, -50%);
+      height: 0.75rem;
+      width: 0.75rem;
+      border-radius: 50%;
+      background-color: $white;
+      transition: 0.1s;
+      background-color: $gray-400;
+      border: 1px solid white;
+    }
+  }
+
+  &:not(:disabled):hover+label.toggle {
+    span {
+      border: 1px solid $primary-400;
+    }
+  }
+
+  &:checked+label.toggle {
+    background-color: $primary-400;
+
+    span {
+      left: unset;
+      transform: translate(0.78rem, -50%);
+      background-color: $primary-200;
+    }
+  }
+
+  &:disabled+label.toggle {
+    cursor: default;
+    background-color: $primary-400;
+
+    span {
+      background-color: $gray-300;
+    }
+  }
+}
+
+.textarea {
+  resize: none;
+  min-height: 6rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: map-get($font-level , 'lg');
+  line-height: 21px;
+  color: $gray-800;
+  border-radius: map-get($radius, 'm');
+  border: 1px solid $gray-500;
+  outline: none;
+  background-color: $white;
+
+  &:not(:disabled):not(.error):hover {
+    border-bottom-width: 2px;
+  }
+
+  &:focus {
+    border-bottom: 2px solid $primary-400;
+  }
+
+  &.error {
+    border: 1px solid $red-400;
+
+    &:hover {
+      background-color: $red-200;
+      border-width: 1.5px;
+    }
+  }
+
+  &:disabled {
+    color: $gray-300;
+    background-color: $gray-200;
+  }
+}
+
+.clicked {
+  animation: press 0.3s;
+}

@@ -1,0 +1,199 @@
+// size & space
+@each $key,
+$value in $spacing {
+  .m-#{$key} {
+    margin: $value;
+  }
+
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .mx-#{$key} {
+    margin-right: $value;
+    margin-left: $value;
+  }
+
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  .p-#{$key} {
+    padding: $value;
+  }
+
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+
+  .px-#{$key} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .h-#{$key} {
+    height: $value;
+  }
+
+  .w-#{$key} {
+    width: $value;
+  }
+
+  .lh-#{$key} {
+    line-height: $value;
+  }
+
+  .t-space-#{$key} {
+    letter-spacing: #{$value};
+  }
+}
+
+@each $key,
+$value in $scale {
+  .opacity-#{$key} {
+    opacity: $value;
+  }
+}
+
+@each $key,
+$value in $radius {
+  .b-r-#{$key} {
+    border-radius: $value;
+  }
+}
+
+@each $key in $display {
+  .d-#{$key} {
+    display: $key;
+  }
+}
+
+@each $key,
+$value in $font-level {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+}
+
+@each $key,
+$value in $font-weight {
+  .fw-#{$key} {
+    font-weight: $value;
+  }
+}
+
+@each $d-value in $flex-direction {
+  .flex-#{$d-value} {
+
+    @each $p-key,
+    $p-value in $Justify-content {
+      &-#{$p-key} {
+        display: flex;
+        flex-direction: $d-value;
+        align-items: center;
+        justify-content: $p-value;
+      }
+    }
+  }
+}
+
+@each $key,
+$value in $theme-colors {
+  @if type-of($value)=='map' {
+
+    @each $sub-key,
+    $sub-value in $value {
+      .bg-#{$key}-#{$sub-key} {
+        background-color: $sub-value;
+      }
+
+      .f-#{$key}-#{$sub-key} {
+        color: $sub-value;
+      }
+
+      .border-#{$key}-#{$sub-key} {
+        border: 1px solid $sub-value;
+      }
+    }
+  }
+
+  @else {
+    .bg-#{$key} {
+      background-color: $value;
+    }
+
+    .f-#{$key} {
+      color: $value;
+    }
+
+    .border-#{$key} {
+      border: 1px solid $value;
+    }
+  }
+}
+
+@each $value in $white-space {
+  .text-#{$value} {
+    white-space: $value;
+  }
+}
+
+@each $value in $cursor-pointer {
+  .pe-#{$value} {
+    cursor: $value;
+  }
+}
+
+@each $value in $position {
+  .p-#{$value} {
+    position: $value;
+  }
+}
+
+@each $value in $overflow {
+  .overflow-#{$value} {
+    overflow: $value
+  }
+}
+
+@each $value in $flex-wrap {
+  .flex-#{$value} {
+    flex-wrap: $value;
+  }
+}
+
+@each $value in $direction {
+  .text-align-#{$value} {
+    text-align: $value;
+  }
+}
