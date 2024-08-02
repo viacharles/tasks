@@ -1,0 +1,7 @@
+@import "variables";
+
+@mixin generateStyleByMaxBreakpoint($break-point: "md") {
+  @media screen and (max-width: calc(map-get($grid-breakpoints, $break-point) - 1px)) {
+    @content;
+  }
+}

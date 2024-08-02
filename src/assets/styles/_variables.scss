@@ -169,3 +169,10 @@ $spacing: (
   fit: fit-content,
   auto: auto,
 );
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 430px,
+  md: 768px,
+  lg: 1440px,
+);
