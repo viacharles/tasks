@@ -19,12 +19,6 @@ export enum EAction {
   View = 'view',
 }
 
-/** 語言 */
-export enum ELang {
-  En = 'en',
-  Cn = 'zh',
-}
-
 /** 回應目的 */
 export enum EFeedbackType {
   Success = 'success',
@@ -36,9 +30,21 @@ export enum EFeedbackType {
   Timeout = 'timeout',
 }
 
+/** 樣式種類 */
+export enum EColorType {
+  /** 主色 */
+  Primary = 'primary',
+  /** 副色 */
+  Secondary = 'secondary',
+  /** 警示色 */
+  Warn = 'warn',
+  /** 無色 */
+  Default = 'default',
+}
+
 export enum ELoadingStatus {
   Loading = 0,
-  Complete,
+  Finished,
   Empty,
   Error,
 }
@@ -52,7 +58,7 @@ export enum EFieldStatus {
   /** api loading */
   Loading,
   /** 完成 */
-  Complete,
+  Finished,
   /** 取消 */
   Cancel,
 }
