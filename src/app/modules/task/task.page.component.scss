@@ -1,0 +1,40 @@
+@import "colors";
+
+:host {
+  padding: 1rem;
+
+  &>div:first-of-type>div:first-of-type {
+    border-right: 1px solid $gray-400;
+
+    app-search-input {
+      min-width: 320px;
+      width: 33%;
+    }
+
+    app-date-picker {
+      min-width: 320px;
+      width: 25%;
+    }
+  }
+}
+
+.card {
+  border: 1px solid $gray-400;
+  background-color: $white;
+
+  .complete-toggle {
+    padding: 0.4rem;
+  }
+
+  &>div {
+    border-bottom: 1px solid $gray-300;
+
+    &>em {
+      cursor: pointer;
+    }
+  }
+
+  pre {
+    line-height: 21px;
+  }
+}

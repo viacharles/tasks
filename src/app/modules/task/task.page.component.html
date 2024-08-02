@@ -1,0 +1,63 @@
+<h3>Tasks</h3>
+<div class="flex-row-between">
+  <div class="flex-wrap flex-row-start w-100p my-3 pr-1">
+    <app-search-input [searchOptions]="this.searchOptions" [placeholder]="'輸入搜尋關鍵字'" (input)="this.inputSearch($event)"
+      (selectType)="this.selectInputType($event)" (cancel)="this.cancelInput()">
+    </app-search-input>
+    <app-date-picker class="ml-3" [isRange]="true" (selectDate)="this.selectDate($event)" (cancel)="this.dateCancel()">
+    </app-date-picker>
+    <app-select class="ml-2" [options]="this.stateOption" [title]="'狀態'" (select)="this.selectState($event)">
+    </app-select>
+  </div>
+  <app-button class="ml-1" [icon]="'add'" [classes]="'fs-lgxx f-primary-400'" [bgColor]="'primary-400'"
+    (click)="this.cards.add()">新增</app-button>
+</div>
+
+<ul>
+  @for (card of this.cards.list; track card; let i = $index) {
+  <li>
+    <div *ngIf="card.show" @downInCompressOut class="card b-r-l p-3 mb-3">
+
+      <div>
+        <div class="flex-row-between pb-3">
+          <div class="flex-row-start">
+            <span
+              class="complete-toggle flex-row-center  bg-{{card.state === this.stateType.Completed ? 'primary-500' : 'yellow-500'}} b-r-l  mr-4">
+              <span class="mr-3 f-white fw-5">{{card.state === this.stateType.Completed ? '已完成' :
+                '未完成'}}</span>
+              <app-toggle (check)="this.toggleState($event, i)" [id]="card.id">
+              </app-toggle>
+            </span>
+            <p class="f-gray-600">{{card.createTime| date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+          </div>
+
+          <div class="flex-row-end ml-3">
+
+            <app-border-button [icon]="'icon-'+(isEdit(card) ? 'confirmed-round' : 'edit')"
+              [type]="isEdit(card) ? colorType.Default : colorType.Primary"
+              (click)="card.mode = (isEdit(card) ? modeType.VIEW : modeType.EDIT)">
+              {{isEdit(card) ? '完成'
+              : '編輯'}}</app-border-button>
+            <app-icon-button [classes]="'icon-trash fs-xl f-gray-500 ml-2'" (click)="this.cards.delete(i)">
+            </app-icon-button>
+          </div>
+        </div>
+        <div class="pb-2">
+          @if (card.mode === modeType.VIEW) {
+          <h4 class="fs-lgx fw-5 f-gray-800 mr-2">{{card.title}}</h4>
+          }
+          @else {
+          <app-input class="w-100p" [size]="this.sizeType.S" [(ngModel)]="card.title"></app-input>
+          }
+        </div>
+      </div>
+
+      @if (card.mode === modeType.VIEW) {
+      <pre class="py-3 fs-lg">{{card.content}}</pre>
+      } @else {
+      <app-fit-content-textarea class="mt-2" [(ngModel)]="card.content"></app-fit-content-textarea>
+      }
+    </div>
+  </li>
+  }
+</ul>
