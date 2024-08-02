@@ -12,7 +12,8 @@ Run `open tasks/index.html` 開啟測試分數細節網頁
 
 ## Codebase architecture
 
-https://viacharles.github.io/tasks/task
+
+[Demo]([https://karma-runner.github.io](https://viacharles.github.io/tasks/task)).
 
 ### Folder Structure:
 
