@@ -6,7 +6,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Codebase architecture
 
-# Folder Structure:
+### Folder Structure:
 
 ├──src  # Compiled files (alternatively `dist`)。  
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──app  
@@ -24,7 +24,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
 
-# Sample Code for Key Files:
+### Sample Code for Key Files:
 
 
 
