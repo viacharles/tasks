@@ -3,7 +3,12 @@
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 ## Live demo site
-
+## Test coverage
+使用 jasminne
+<img width="1674" alt="image" src="https://github.com/user-attachments/assets/34923458-3305-45bd-853b-4a259090bb6c">
+在資料夾 coverage 中，
+Run `ng test --code-coverage` 運行測試。
+Run `open tasks/index.html` 開啟測試分數細節網頁
 
 ## Codebase architecture
 
@@ -24,8 +29,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──assets  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
-
-### Sample Code for Key Files:
 
 
 
