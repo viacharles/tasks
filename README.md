@@ -5,21 +5,22 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Codebase architecture
 
 Folder Structure:
-/src
-  /app
-    /modules
-      /layout
-      /task
-    /shared
-      /abstract
-      /components
-      /directives
-      /helpers
-      /serrvices
-      /utilities
-    /assets
-      /font
-      /styles
+
+├──src  # Compiled files (alternatively `dist`)
+├     ├──app
+├         ├──modules  # 功能都放這裡
+├              ├──layout # 基礎排版
+├              ├──task 
+├         ├──shared  # 共用元素
+├              ├──abstract
+├              ├──components
+├              ├──directives
+├              ├──helpers
+├              ├──serrvices
+├              ├──utilities
+├         ├──assets
+├              ├──font # font icon 庫
+├              ├──styles # base scss setting
 
 
 ## Code scaffolding
