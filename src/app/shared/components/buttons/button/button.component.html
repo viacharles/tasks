@@ -1,0 +1,6 @@
+<div class="ml-2 d-flex" [style]="{ height: this.height}">
+  <button appClickAnim class="btn fs-xsm bg-{{this.bgColor}} px-5" [disabled]="this.disabled">
+    <em *ngIf="this.icon" class="icon-{{this.icon}} f-{{this.disabled ? 'gray-700' : 'white' }} mr-3"></em>
+    <ng-content></ng-content>
+  </button>
+</div>

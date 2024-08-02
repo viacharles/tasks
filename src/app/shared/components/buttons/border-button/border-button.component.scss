@@ -1,0 +1,65 @@
+@import "colors";
+@import "variables";
+
+button {
+  cursor: pointer;
+  color: $gray-800;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  outline: none;
+  white-space: nowrap;
+  border: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: 0.05s;
+  border: 1px solid transparent;
+
+  p {
+    letter-spacing: 1px;
+  }
+
+  &.primary {
+    color: $primary-700;
+    filter: brightness(99%);
+    border-color: $primary-500;
+
+    em {
+      color: $primary-400;
+    }
+  }
+
+  &.warn {
+    color: $red-400;
+    border-color: $red-500;
+  }
+
+  &.default {
+    color: $gray-600;
+    border-color: $gray-700;
+  }
+
+
+  &.s {
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: map-get($radius , 's');
+
+    em {
+      font-size: 1rem;
+    }
+  }
+
+  &.m {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    border-radius: map-get($radius , 'm');
+
+    em {
+      font-size: 1.2rem;
+    }
+  }
+}

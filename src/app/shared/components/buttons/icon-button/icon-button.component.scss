@@ -1,0 +1,23 @@
+@import "colors";
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+em {
+  padding: 7px;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $gray-200;
+  }
+
+  &.s {
+    font-size: 0.5rem;
+  }
+
+  &.m {
+    font-size: 1.2rem;
+  }
+}
