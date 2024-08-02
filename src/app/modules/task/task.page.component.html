@@ -1,15 +1,18 @@
-<h3>Tasks</h3>
+<div class="flex-row-between mx-4">
+  <h3 class="fw-5">Tasks</h3>
+  <p class="fs-xs fw-2 f-gray-500 ml-5">作者：昌霖</p>
+</div>
 <div class="flex-row-between">
   <div class="flex-wrap flex-row-start w-100p my-3 pr-1">
-    <app-search-input [searchOptions]="this.searchOptions" [placeholder]="'輸入搜尋關鍵字'" (input)="this.inputSearch($event)"
-      (selectType)="this.selectInputType($event)" (cancel)="this.cancelInput()">
+    <app-search-input class="my-1 mr-1" [searchOptions]="this.searchOptions" [placeholder]="'輸入搜尋關鍵字'"
+      (input)="this.inputSearch($event)" (selectType)="this.selectInputType($event)" (cancel)="this.cancelInput()">
     </app-search-input>
-    <app-date-picker class="ml-3" [isRange]="true" (selectDate)="this.selectDate($event)" (cancel)="this.dateCancel()">
+    <app-date-picker class="m-1" [isRange]="true" (selectDate)="this.selectDate($event)" (cancel)="this.dateCancel()">
     </app-date-picker>
-    <app-select class="ml-2" [options]="this.stateOption" [title]="'狀態'" (select)="this.selectState($event)">
+    <app-select class="m-1" [options]="this.stateOption" [title]="'狀態'" (select)="this.selectState($event)">
     </app-select>
   </div>
-  <app-button class="ml-1" [icon]="'add'" [classes]="'fs-lgxx f-primary-400'" [bgColor]="'primary-400'"
+  <app-button class="m-1" [icon]="'add'" [classes]="'fs-lgxx f-primary-400'" [bgColor]="'primary-400'"
     (click)="this.cards.add()">新增</app-button>
 </div>
 
