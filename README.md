@@ -5,7 +5,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Live demo site
 
 
-[Demo]([https://karma-runner.github.io](https://viacharles.github.io/tasks/task)).
+[Live Demo](https://viacharles.github.io/tasks/task)
 
 ## Test coverage
 使用 jasminne
