@@ -1,4 +1,5 @@
-<img width="978" alt="image" src="https://github.com/user-attachments/assets/9d4683e5-bd01-4efa-adf7-5ecd98fbdb37">
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/f43b0bd7-65c1-4616-9ae6-419b76719364">
+
 ## How to run the source code
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
