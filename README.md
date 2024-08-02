@@ -1,10 +1,42 @@
-# Tasks
+<img width="1197" alt="image" src="https://github.com/user-attachments/assets/f43b0bd7-65c1-4616-9ae6-419b76719364">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
-
-## Development server
+## How to run the source code
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Live demo site
+
+
+[Live Demo](https://viacharles.github.io/tasks/task)
+
+## Test coverage
+使用 jasminne
+<img width="1674" alt="image" src="https://github.com/user-attachments/assets/34923458-3305-45bd-853b-4a259090bb6c">
+在資料夾 coverage 中，
+Run `ng test --code-coverage` 運行測試。
+Run `open tasks/index.html` 開啟測試分數細節網頁
+
+## Codebase architecture
+
+### Folder Structure:
+
+├──src  # Compiled files (alternatively `dist`)。  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──app  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──modules  # 功能區塊都放這裡  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──layout # 基礎排版  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──task   
+├&nbsp;&nbsp;&nbsp;&nbsp;├──shared  # 共用元素  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──abstract  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──components  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──directives  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──helpers  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──serrvices  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──utilities  
+├&nbsp;&nbsp;&nbsp;&nbsp;├──assets  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
+
+
+
 
 ## Code scaffolding
 
@@ -25,3 +57,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Tasks
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
