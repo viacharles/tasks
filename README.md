@@ -1,23 +1,25 @@
+## Live demo site
+[Live Demo](https://viacharles.github.io/tasks/task)
 <img width="1197" alt="image" src="https://github.com/user-attachments/assets/f43b0bd7-65c1-4616-9ae6-419b76719364">
 
 ## How to run the source code
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-## Live demo site
 
-
-[Live Demo](https://viacharles.github.io/tasks/task)
 
 ## Test coverage
 使用 jasminne
 <img width="1674" alt="image" src="https://github.com/user-attachments/assets/34923458-3305-45bd-853b-4a259090bb6c">
 在資料夾 coverage 中，
-Run `ng test --code-coverage` 運行測試。
+Run `ng test --code-coverage` 運行測試。  
 Run `open tasks/index.html` 開啟測試分數細節網頁
 
 ## Codebase architecture
 
-### Folder Structure:
+### 三方庫: 
+dayjs: for 時間處理，使用性能較好的 ESM 模組，但因為同時包容 CommonJs 所以會有 warning.
+
+### 目錄結構:
 
 ├──src  # Compiled files (alternatively `dist`)。  
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──app  
@@ -25,12 +27,12 @@ Run `open tasks/index.html` 開啟測試分數細節網頁
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──layout # 基礎排版  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──task   
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──shared  # 共用元素  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──abstract  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──components  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──directives  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──helpers  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──serrvices  
-├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──utilities  
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──abstract  共用抽象繼承
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──components  共用元件
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──directives  共用指令
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──helpers  共用 function
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──serrvices  共用服務
+├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──utilities  共用工具: interface / enum
 ├&nbsp;&nbsp;&nbsp;&nbsp;├──assets  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──font # font icon 庫  
 ├&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──styles # base scss setting  
