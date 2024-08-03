@@ -42,7 +42,7 @@ dayjs: for 時間處理，使用性能較好的 ESM 模組，但因為同時包�
 
 ### 功能處理流程:
 
-[ 畫面 (tasks.html) ] <- [ 畫面邏輯 (tasks.ts) ] <- [ 資料處理 (cards.model) ]
+[ 畫面 (tasks.html) ] <- [ 畫面互動 (tasks.ts) ] <- [ 資料處理 (cards.model) ]
 
 
 ## Code scaffolding
