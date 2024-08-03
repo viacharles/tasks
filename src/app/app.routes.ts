@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
-import { TaskPageComponent } from './modules/task/task.page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'task', pathMatch: 'full' },
-  { path: 'task', component: TaskPageComponent },
+  {
+    path: 'task',
+    loadComponent: () => import('./modules/task/task.page.component').then(m => m.TaskPageComponent)
+  },
   { path: '**', redirectTo: 'task', pathMatch: 'full' },
 ];
