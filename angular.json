@@ -42,7 +42,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/tasks/",
               "budgets": [
                 {
                   "type": "initial",

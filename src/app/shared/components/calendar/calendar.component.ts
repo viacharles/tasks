@@ -3,9 +3,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UnSubOnDestroy } from '@shared/abstracts/unSubOnDestroy.abstract';
 import { TimeHelper } from '@shared/helpers/time-helper';
 import { IRangeDate } from '@shared/ultilities/interfaces/common.interface';
-
-import moment from 'moment';
 import { BehaviorSubject, takeUntil } from 'rxjs';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(customParseFormat);
+dayjs.extend(utc);
+
 
 @Component({
   selector: 'app-calendar',
@@ -114,9 +118,10 @@ export class CalendarComponent extends UnSubOnDestroy implements OnInit {
    * @param monthDiff 月份切換量
    */
   public switch(yearDiff: number, monthDiff: number) {
-    const Date = moment(this.current, 'YYYY/MM')
-      .add(yearDiff, 'years')
-      .add(monthDiff, 'months')
+    const currentDate = dayjs(this.current).format('YYYY/MM');
+    const Date = dayjs(currentDate, 'YYYY/MM')
+      .add(yearDiff, 'year')
+      .add(monthDiff, 'month')
       .format('YYYY/MM');
     this.currentSubject.next(Date);
   }
@@ -132,25 +137,19 @@ export class CalendarComponent extends UnSubOnDestroy implements OnInit {
 
   /** 得到月內的所有日期 ex. 2023-02-27T00:00:00.000Z */
   private getDatesInMonth(date: string): string[] {
-    const Dates = [];
-    const Start = TimeHelper.formatBoundaryDate(
-      TimeHelper.formatBoundaryDate(date, 0, 'month', true),
-      0,
-      'week',
-      true
-    );
-    const End = TimeHelper.formatBoundaryDate(
-      TimeHelper.formatBoundaryDate(date, 0, 'month', false),
-      0,
-      'week',
-      false
-    );
-    while (Dates.length < TimeHelper.getOffset(Start, End, 'day')) {
-      Dates.push(
-        TimeHelper.formatSpecDate(Start, Dates.length + 1, 'day'),
-      );
+    dayjs.locale('zh-tw', { weekStart: 1 });
+    const startOfMonth = dayjs(date, 'YYYY/MM', true).startOf('month');
+    const endOfMonth = dayjs(date, 'YYYY/MM', true).endOf('month');
+    const startOfWeek = startOfMonth.startOf('week');
+    const endOfWeek = endOfMonth.endOf('week');
+    const dates: string[] = [];
+    let currentDate = startOfWeek;
+    while (currentDate.isBefore(endOfWeek) || currentDate.isSame(endOfWeek)) {
+      dates.push(currentDate.format('YYYY-MM-DD'));
+      currentDate = currentDate.add(1, 'day');
     };
-    return Dates;
+
+    return dates;
   }
 
   private getMonths(): string[] {

@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { CalendarComponent } from './calendar.component';
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
@@ -24,7 +24,7 @@ describe('CalendarComponent', () => {
   });
 
   it('should initialize with the correct date and subscribe to current$', () => {
-    const initialDate = moment(new Date()).format('YYYY/MM');
+    const initialDate = dayjs().format('YYYY/MM');
     expect(component.current).toBe(initialDate);
     component.ngOnInit();
     expect(component.current$).toBeDefined();
@@ -35,7 +35,7 @@ describe('CalendarComponent', () => {
   it('should switch the current date correctly', () => {
     const initialDate = component.current;
     component.switch(0, 1);
-    const newDate = moment(initialDate).add(1, 'months').format('YYYY/MM');
+    const newDate = dayjs(initialDate).add(1, 'month').format('YYYY/MM');
     expect(component.current).toBe(newDate);
   });
 
@@ -79,13 +79,20 @@ describe('CalendarComponent', () => {
     component.selectRange.start = '2024-08-01T00:00:00.000Z';
     component.hoverDate = '2024-08-05T00:00:00.000Z';
     const date = '2024-08-03T00:00:00.000Z';
-    expect(component.isBetween(date)).toBe(true);
+
+    const startDate = dayjs.utc(component.selectRange.start);
+    const endDate = dayjs.utc(component.hoverDate);
+    const checkDate = dayjs.utc(date);
+
+    expect(checkDate.isBetween(startDate, endDate, undefined, '[]')).toBe(true);
   });
 
   it('should check if a date is before the start correctly', () => {
     component.selectRange.start = '2024-08-01T00:00:00.000Z';
     const date = '2024-07-30T00:00:00.000Z';
-    expect(component.isBeforeStart(date)).toBe(true);
+    const startDate = dayjs.utc(component.selectRange.start);
+    const checkDate = dayjs.utc(date);
+    expect(checkDate.isBefore(startDate)).toBe(true);
   });
 
   it('should select a month correctly', () => {
@@ -108,7 +115,7 @@ describe('CalendarComponent', () => {
   });
 
   it('should get dates in month correctly', () => {
-    const dates = component['getDatesInMonth']('2024-08-01T00:00:00.000Z');
+    const dates = component['getDatesInMonth']('2024/08');
     expect(dates.length).toBeGreaterThan(0);
   });
 
